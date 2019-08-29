@@ -1,3 +1,3 @@
-import ItsWorking from './components/ItsWorking'
+import CardComponent from './components/CardComponent'
 
-export {ItsWorking}
+export default CardComponent

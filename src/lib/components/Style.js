@@ -1,19 +1,11 @@
-import styled from 'styled-components'
-import color from 'color'
-import RedwallColorPallete from 'color-pallete-component-module'
-import Theming from 'theming-component-module'
+import styled, {createGlobalStyle} from 'styled-components'
 
-const theme = Theming.createThemeWithAppearance()
-
-const ItsWorkingStyled = styled.h2`
-  color: ${props => theme(props).color};
-`
-
-ItsWorkingStyled.defaultProps = {
-  appearance: 'primary',
-  theme: {
-    mode: 'light'
+export const ResetCSS = createGlobalStyle `
+  .responsive-navbar-component-module,  .responsive-navbar-component-module * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: rgb(100,100,100);
+    font-family: Arial, Heveltica, Tahoma, Geneva, sans-serif;
   }
-}
-
-export {ItsWorkingStyled}
+`
