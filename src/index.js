@@ -38,15 +38,6 @@ class App extends React.Component {
           },{
             icon: 'I',
             name: 'Deu certo'
-          },{
-            icon: 'I',
-            name: 'Deu certo'
-          },{
-            icon: 'I',
-            name: 'Deu certo'
-          },{
-            icon: 'I',
-            name: 'Deu certo'
           }
         ]}>
         </Navbar>

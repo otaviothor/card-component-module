@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react'
 
-const CardComponent = ({}) => (
-  <div>op</div>
-);
+const CardComponent = ({}) => {
+  return (
+    <div>op</div>
+  )
+}
 
-export default CardComponent;
+export default CardComponent
