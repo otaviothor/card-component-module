@@ -5,6 +5,7 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import Card from './lib/index'
 import Navbar from 'responsive-navbar-component-module';
 import logo from './lib/assets/icon.png';
+import imgItem from './lib/assets/imgItem.jpg'
 
 const ResetCSS = createGlobalStyle `
   body {
@@ -30,8 +31,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <ResetCSS/>
-        <Navbar img={logo} items={[
+        {/* <ResetCSS/>
+          <Navbar img={logo} items={[
           {
             icon: 'I',
             name: 'Deu certo'
@@ -39,10 +40,15 @@ class App extends React.Component {
             icon: 'I',
             name: 'Deu certo'
           }
+        ]}> */}
+        <Card cards={[
+          {
+            img: {imgItem},
+            title: 'Martelo'
+          }
         ]}>
-        </Navbar>
-        <Card>
         </Card>
+        {/* </Navbar> */}
       </>
     )
   }
