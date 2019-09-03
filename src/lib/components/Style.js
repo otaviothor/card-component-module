@@ -1,5 +1,4 @@
 import styled, {createGlobalStyle} from 'styled-components'
-
 export const ResetCSS = createGlobalStyle `
   .card-component-module,  .card-component-module * {
     box-sizing: border-box;
@@ -10,42 +9,72 @@ export const ResetCSS = createGlobalStyle `
   }
 `
 
-export const Container = styled.div `
-  width: 100%;
-  height: 100vh;
-  display: flex;
-`
-
-export const CardContainer = styled.div`
-  width: 100%;
-  height: 400px;
-  position: relative;
-`
-
 export const Card = styled.div`
-  height: 320px;
-  width: 220px;
+  display: inline-block;
+  width: 100%;
+  max-width: 344px;
+  transition: .2s;
+  margin: 5px;
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 3px 15px 0 rgba(0,0,0,0.1);
   border-radius: 4px;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.2s;
-  position: absolute;
-  &:hover{
-    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
-    cursor: pointer;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 4px 30px 0 rgba(0,0,0,0.12);
+    transform: translateY(-1px);
   }
 `
 
+export const CardHeader = styled.header`
+  min-height: : 194px;
+  max-height: 194px;
+  height: 194px;
+  margin: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-image: url(${props=> props.header});
+  background-size: cover;
+`
+
+export const CardTitle = styled.h1`
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 44px;
+  margin: 0 16px;
+`
+
+export const CardTitleComplement = styled.div`
+  font-size: 12px;
+  margin: 0 16px;
+  line-height: 24px;
+`
+
+export const CardSubtitle = styled.h4`
+  font-size: 14px;
+  margin: 0 16px;
+  line-height: 32px;
+  color: #000000de;
+`
+
 export const CardContent = styled.div`
-  height: 100%;
   width: 100%;
+  max-height: 100px;
+  height: auto;
+  overflow-y: auto;
+  padding: 0 16px;
+  text-align: justify;
 `
 
-export const CardImg = styled.img`
-  width: 100%;
-  height: 150px;
+export const CardDescription = styled.span`
+  font-size: 14px;
+  color: #00000099;
 `
 
-export const CardTitle = styled.h5`
-  margin: 5px 0 0 5px;
+export const CardAction = styled.button`
+  font-size: 14px;
+  margin: 0 8px;
+  padding: 0 16px;
+  line-height: 36px;
+  min-width: 64px;
 `

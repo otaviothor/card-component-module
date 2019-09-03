@@ -1,36 +1,36 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types';
 
-import {ResetCSS, Container, Card, CardContent, CardImg, CardTitle} from './Style';
+import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle, CardContent, CardDescription, CardAction} from './Style';
 
-const cards = ({cards}) => (
-  <>
-    {
-      cards.map((card, i) => {
-        return (
-          <CardContent cards={i} key={i}>
-            <CardImg>
-              {card.img}
-            </CardImg>
-            <CardTitle>
-              {card.title}
-            </CardTitle>
-          </CardContent>
-        )
-      })
-    }
-  </>
-  );
-
-  const CardComponent = ({img, icon}) => {
+  const CardComponent = ({header, title, titleComplement, subtitle, description, actions}) => {
     return (
-      <Container className='card-component-module'>
+      <Card className="card-component-module">
         <ResetCSS/>
-        <Card>
-          <CardContent cards={cards}>
-
+        {header && <CardHeader header={header}/>}
+        <CardTitle title={title}>{title}</CardTitle>
+        <CardTitleComplement>{titleComplement}</CardTitleComplement>
+        <CardSubtitle>{subtitle}</CardSubtitle>
+        {description &&
+          <CardContent>
+            <CardDescription>{description}</CardDescription>
           </CardContent>
-        </Card>
-      </Container>)
+        }
+        {actions && actions.map((action) => {
+          return (
+            <CardAction onClick={action.handler}>{action.name}</CardAction>
+          )
+        })}
+      </Card>
+      )
+  }
+
+  CardComponent.propTypes = {
+    header: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    titleComplement: PropTypes.node,
+    subtitle: PropTypes.string,
+    description: PropTypes.string
   }
 
   export default CardComponent
