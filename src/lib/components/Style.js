@@ -17,7 +17,6 @@ export const Card = styled.div`
   margin: 5px;
   box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 3px 15px 0 rgba(0,0,0,0.1);
   border-radius: 4px;
-  cursor: pointer;
   &:hover {
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 4px 30px 0 rgba(0,0,0,0.12);
     transform: translateY(-1px);
@@ -71,10 +70,34 @@ export const CardDescription = styled.span`
   color: #00000099;
 `
 
+export const CardContainerAction = styled.div`
+  display: flex;
+  justify-content: ${props => props.actionAlign ? props.actionAlign === "center" && "center"
+  : props.actionAlign === "right" ? "flex-end" : "flex-start"};
+`
+
 export const CardAction = styled.button`
   font-size: 14px;
-  margin: 0 8px;
+  margin: 8px;
   padding: 0 16px;
   line-height: 36px;
   min-width: 64px;
+  border-radius: 4px;
+  border: ${props => props.appearance === "outlined"
+  ? "1px solid rgba(0, 0, 0, 0.12)" : "none"};
+  border-bottom: ${props => props.appearance === "outlined"
+  ? "1px solid rgba(0, 0, 0, 0.12)" : "none"};
+  background: ${props => props.appearance === "contained"
+  ? "rgb(98, 0, 238, 1)" : "none"};
+  color: ${props => props.appearance === "contained"
+  ? "#fff" : "inherit"};
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.2s;
+  ${'' /* &:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 4px 30px 0 rgba(0,0,0,0.12);
+    transform: translateY(-2px);
+  } */}
 `

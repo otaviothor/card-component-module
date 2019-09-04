@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types';
 
-import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle, CardContent, CardDescription, CardAction} from './Style';
+import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle, CardContent, CardDescription, CardContainerAction, CardAction} from './Style';
 
-  const CardComponent = ({header, title, titleComplement, subtitle, description, actions}) => {
+  const CardComponent = ({header, title, titleComplement, subtitle, description, actionAlign, actions}) => {
     return (
       <Card className="card-component-module">
         <ResetCSS/>
@@ -18,7 +18,9 @@ import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle
         }
         {actions && actions.map((action) => {
           return (
-            <CardAction onClick={action.handler}>{action.name}</CardAction>
+            <CardContainerAction>
+              <CardAction appearance={action.appearance} onClick={action.handler}>{action.name}</CardAction>
+            </CardContainerAction>
           )
         })}
       </Card>
