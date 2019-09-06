@@ -72,8 +72,9 @@ export const CardDescription = styled.span`
 
 export const CardContainerAction = styled.div`
   display: flex;
-  justify-content: ${props => props.actionAlign ? props.actionAlign === "center" && "center"
-  : props.actionAlign === "right" ? "flex-end" : "flex-start"};
+  justify-content: ${props => props.actionAlign === "left"
+  ? "flex-start" : props.actionAlign === "center" ? "center"
+  : "flex-end"};
 `
 
 export const CardAction = styled.button`
@@ -88,16 +89,15 @@ export const CardAction = styled.button`
   border-bottom: ${props => props.appearance === "outlined"
   ? "1px solid rgba(0, 0, 0, 0.12)" : "none"};
   background: ${props => props.appearance === "contained"
-  ? "rgb(98, 0, 238, 1)" : "none"};
+  ? "rgb(113, 89, 193, 1)" : "none"};
   color: ${props => props.appearance === "contained"
   ? "#fff" : "inherit"};
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
   transition: 0.2s;
-  ${'' /* &:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 0 1px 0 rgba(0,0,0,0.05), 0 4px 30px 0 rgba(0,0,0,0.12);
-    transform: translateY(-2px);
-  } */}
+  outline: none;
+  &:hover{
+    box-shadow: ${props => props.appearance === "text" && "0 0 1px 0 rgba(0,0,0,0.05), 0 4px 30px 0 rgba(0,0,0,0.12)"};
+  }
 `

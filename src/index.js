@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from "react-dom"
 
-import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import Card from './lib/index'
 import Navbar from 'responsive-navbar-component-module';
 import logo from './lib/assets/icon.png';

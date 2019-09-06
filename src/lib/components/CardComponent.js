@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 
 import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle, CardContent, CardDescription, CardContainerAction, CardAction} from './Style';
@@ -16,13 +16,13 @@ import {ResetCSS, Card, CardHeader, CardTitle, CardTitleComplement, CardSubtitle
             <CardDescription>{description}</CardDescription>
           </CardContent>
         }
-        {actions && actions.map((action) => {
-          return (
-            <CardContainerAction>
-              <CardAction appearance={action.appearance} onClick={action.handler}>{action.name}</CardAction>
-            </CardContainerAction>
-          )
-        })}
+        <CardContainerAction actionAlign={actionAlign}>
+          {actions && actions.map((action, i) => {
+            return (
+              <CardAction key={i} appearance={action.appearance} onClick={action.handler}>{action.name}</CardAction>
+            )
+          })}
+        </CardContainerAction>
       </Card>
       )
   }
