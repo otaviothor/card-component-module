@@ -3,9 +3,7 @@ import { render } from "react-dom"
 
 import { createGlobalStyle } from 'styled-components'
 import Card from './lib/index'
-import Navbar from 'responsive-navbar-component-module';
 import logo from './lib/assets/icon.png';
-import imgItem from './lib/assets/imgItem.jpg'
 
 const ResetCSS = createGlobalStyle `
   body {
