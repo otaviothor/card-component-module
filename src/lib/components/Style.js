@@ -9,6 +9,7 @@ export const ResetCSS = createGlobalStyle `
     * {
       box-sizing: border-box;
       font-family: Arial, Heveltica, Tahoma, Geneva, sans-serif;
+      transition: 0.2s;
     }
   }
 `
@@ -49,6 +50,37 @@ export const CardTitleComplement = styled.div`
   line-height: 24px;
 `
 
+export const CardContainerMobile = styled.div`
+  width: 100%;
+  display: flex;
+`
+
+export const CardMobileTitles = styled.div`
+  width: 85%;
+`
+
+export const CardMobileAction = styled.div`
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+export const CardMobileActionIcon = styled.button`
+  font-size: 24px;
+  background: transparent;
+  height: 35px;
+  width: 35px;
+  border: none;
+  border-radius: 50%;
+  ${props => props.openCard && 'transform: rotate(180deg);'}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+`
+
 export const CardSubtitle = styled.h4`
   font-size: 14px;
   margin: 0 16px;
@@ -56,9 +88,18 @@ export const CardSubtitle = styled.h4`
   color: #000000de;
 `
 
+export const CardContentMobile = styled.div`
+  width: 100%;
+  max-height: ${props => props.openCard ? 'auto' : '0'};
+  height: auto;
+  overflow-y: auto;
+  padding: ${props => props.openCard ? '16px 16px' : '0'};
+  text-align: justify;
+`
+
 export const CardContent = styled.div`
   width: 100%;
-  max-height: 100px;
+  max-height: 200px;
   height: auto;
   overflow-y: auto;
   padding: 0 16px;
